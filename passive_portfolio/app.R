@@ -1,7 +1,6 @@
 
 library(quantmod)
 library(dplyr)
-library(quantmod)
 library(PerformanceAnalytics)
 library(PortfolioAnalytics)
 library(ROI)

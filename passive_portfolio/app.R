@@ -4,17 +4,14 @@ library(dplyr)
 library(quantmod)
 library(PerformanceAnalytics)
 library(PortfolioAnalytics)
-#library(DEoptim)
 library(ROI)
 library(quantmod)
-#require(ROI.plugin.glpk)
-#require(ROI.plugin.quadprog)
 library(scales)
 library(shinycssloaders)
 library(shinydashboard)
 library(shinyjs)
 library(htmltools)
-#library(bsplus)
+library(V8)
 source("helper.R")
 
 
@@ -57,6 +54,7 @@ ui <- fluidPage(theme = "bootstrap.css",
                            1. Make sure you have entered at least 5 tickers. 
                            2. Make sure each of the tickers you have entered are valid '; }"),
                 tags$head(includeHTML(("google-analytics.html"))),
+                shinyjs::extendShinyjs(text = "shinyjs.refresh = function() { location.reload(); }"),
 
         fluidRow( #row 1
             column(2, hr()),
@@ -144,13 +142,8 @@ output$reset <- renderUI({
 
 #Features of reset button
 observeEvent(input$reset, {
-    reset("investment")})
-observeEvent(input$reset, {
-    reset("stocks")})
-observeEvent(input$reset, {
-    reset("factor")})
-observeEvent(input$reset, {
-    reset("click")})
+  shinyjs::js$refresh()
+})
 
 #OUTPUTS
 #stock info

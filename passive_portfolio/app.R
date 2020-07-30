@@ -15,7 +15,7 @@ library(shinydashboard)
 library(shinyjs)
 library(htmltools)
 library(bsplus)
-source("/shiny-serve/passive_portfolio/helper.R")
+source("/shiny-server/passive_portfolio/helper.R")
 
 
 #TODO

@@ -56,6 +56,7 @@ ui <- fluidPage(theme = "bootstrap.css",
                            ".shiny-output-error:before { visibility: visible; content: 'An error occurred. 
                            1. Make sure you have entered at least 5 tickers. 
                            2. Make sure each of the tickers you have entered are valid '; }"),
+                tags$head(includeHTML(("google-analytics.html"))),
 
         fluidRow( #row 1
             column(2, hr()),

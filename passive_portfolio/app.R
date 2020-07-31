@@ -87,6 +87,12 @@ ui <- fluidPage(theme = "bootstrap.css",
                                 div(style = 'overflow-x: scroll', tableOutput("weights")),
                                 tableOutput("description")%>% withSpinner(color="#805d8d"),
                                 uiOutput("reset"))),
+                     
+                         fluidRow(
+                      column(12,
+                             linebreaks(3)
+                             )
+                    ) 
                    # fluidRow(
                     #  linebreaks(10),
                      # column(12, 
@@ -212,7 +218,7 @@ observeEvent(input$faq1, {
   output$faq1text <- renderUI({
 
     tags$ol(
-      tags$li(h5("Why is my CVaR so high?")), 
+      tags$li(h5("Why is my standard deviation so high?")), 
       tags$p("The program works best when you have included at least 10-15+ securities. 
              In addition if you have entered securities that are highly correlated the program 
              will not be as effective"),

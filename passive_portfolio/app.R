@@ -54,6 +54,10 @@ ui <- fluidPage(theme = "bootstrap.css",
                            1. Make sure you have entered at least 5 tickers. 
                            2. Make sure each of the tickers you have entered are valid '; }"),
                 tags$head(includeHTML(("google-analytics.html"))),
+                tags$head(includeHTML(("google-adsence.html"))),
+                
+                
+             
                 shinyjs::extendShinyjs(text = "shinyjs.refresh = function() { location.reload(); }"),
 
         fluidRow( #row 1

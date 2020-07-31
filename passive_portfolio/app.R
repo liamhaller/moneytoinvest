@@ -72,7 +72,8 @@ ui <- fluidPage(theme = "bootstrap.css",
                                               "reserch shows"), "approximately 20-30 individual stocks are necessary for proper diversification. 
                                                If you are using a combination of ETFs/Mutual Funds and stocks fewer investments may be necessary. 
                                                 To learn more read", tags$a(href="https://www.thebalance.com/diversified-passive-investing-strategy-357878",target="_blank", 
-                                                "passive investing"), "or", tags$a(href="http://news.morningstar.com/classroom2/course.asp?docId=2938&page=4&CN=COM",target="_blank", "ways to diversify."),""),
+                                                "passive investing"), "or", tags$a(href="http://news.morningstar.com/classroom2/course.asp?docId=2938&page=4&CN=COM",target="_blank", "ways to diversify."),
+                                               " In addition at least four years of histocial data for each security is necessary"),
                                      tags$li(h4("Select market exposure")),
                                         tags$p("Market exposure is a measure of your portfolio’s volatility in relation to the overall market. 
                                                Essentially, the higher the range, the larger your portfolio’s risk-reward ratio will be. 

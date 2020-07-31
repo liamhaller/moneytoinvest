@@ -42,7 +42,7 @@ ui <- fluidPage(theme = "bootstrap.css",
                            2. Make sure each of the tickers you have entered are valid '; }"),
                 tags$head(includeHTML(("google-analytics.html"))),
                 tags$head(includeHTML(("google-adsence.html"))),
-                tags$head(tags$img(rel="shortcut icon", href="favicon.png")),
+                tags$head(tags$link(rel="shortcut icon", href="favicon.png")),
                 
                 
              

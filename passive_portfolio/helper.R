@@ -118,7 +118,7 @@ print_desc <- function(objective_measures, betas, weights, hist){
   #portfolio mean
   mean <- round(out$mean*12,2)
   #portfolio standard deviation
-  stdev <- round(as.numeric(out[2])*sqrt(12),2) #changed to CVaR 7/31
+  stdev <- round(out$CVaR*sqrt(12),2)
   #portfolio beta
   portfolio_beta <- sum(as.vector(weights)*betas)
   

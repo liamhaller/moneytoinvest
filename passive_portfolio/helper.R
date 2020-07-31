@@ -98,8 +98,8 @@ pspec <- add.constraint(portfolio=pspec, type="factor_exposure",
 # Optimize ----------------------------------------------------------------
 
 qu <- add.objective(portfolio=pspec, type="return", name="mean")
-qu <- add.objective(portfolio=qu, type="risk", name="CVaR")
-opt_qu <- optimize.portfolio(R=hist, portfolio=qu, maxSTARR = TRUE,
+qu <- add.objective(portfolio=qu, type="risk", name="StdDev")
+opt_qu <- optimize.portfolio(R=hist, portfolio=qu,
                              optimize_method="random", trace=TRUE)
 
 return(opt_qu)
@@ -118,12 +118,12 @@ print_desc <- function(objective_measures, betas, weights, hist){
   #portfolio mean
   mean <- round(out$mean*12,2)
   #portfolio standard deviation
-  stdev <- round(out$CVaR*sqrt(12),2)
+  stdev <- round(out$StdDev*sqrt(12),2)
   #portfolio beta
   portfolio_beta <- sum(as.vector(weights)*betas)
   
   numbers <- c(paste(mean*100, "%", sep=""), paste(stdev*100, "%", sep=""), round(portfolio_beta,2), round(nrow(hist)/12,1))
-  letters <- c("Annual Expected Return", "Annual CVaR", "Portfolio Beta", "Years of Data")
+  letters <- c("Annual Expected Return", "Annual Standard Deviation", "Portfolio Beta", "Years of Data")
   
   #assemble data frame
   df2 <- data.frame(matrix(nrow = 1, data = numbers))
@@ -131,8 +131,8 @@ print_desc <- function(objective_measures, betas, weights, hist){
   return(df2)
 }
 
-meanorstdev <- function(opt_qu){
-  values <- as.numeric(opt_qu$objective_measures)
-  return(values)
-}
+#meanorstdev <- function(opt_qu){
+#  values <- as.numeric(opt_qu$objective_measures)
+#  return(values)
+#}
 

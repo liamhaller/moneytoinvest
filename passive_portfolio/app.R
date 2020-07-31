@@ -220,14 +220,22 @@ observeEvent(input$click, {
 
 observeEvent(input$faq1, {
   toggle('text_div1')
-  output$faq1text <- renderUI({p("To illustrate standard deviation let's look at", tags$strong("your portfolio."), "It has an anual expected return of", paste(round(values()[1]*1200,0), "%", sep=""), 
-                                 "and a standard deviation of", paste(round(values()[2]*346.4102,0), "%", sep=""), ". Most of the time",  
-                                 tags$a(href="https://en.wikipedia.org/wiki/68%E2%80%9395%E2%80%9399.7_rule#:~:text=For%20an%20approximately%20normal%20data,deviations%20account%20for%20about%2099.7%25.", "(or more precisely, 68% of the time)"),
-                                 "your portfolio's annual returns will range between", paste(round((values()[1]*1200-values()[2]*346.4102),0), "%", sep="")," and", paste(round((values()[1]*1200+values()[2]*346.4102),0), "%", sep=""),
-                                 ". If we look at two standard deviations, 95% of the time your portfolio's returns will fall between",
-                                 paste(round((values()[1]*1200-2*values()[2]*346.4102),0), "%", sep="")," and",  paste(round((values()[1]*1200+2*values()[2]*346.4102),0), "%", sep=""),"
-                                ")})
-})
+  output$faq1text <- renderUI({
+
+    tags$ol(
+      tags$li(h4("Why is my CVaR so high?")), 
+      tags$p("The program works best when you have included at least 10-15+ securities. 
+             In addition if you have entered securities that are highly correlated the program 
+             will not be as effective"),
+      tags$li(h4("My portfolio beta is not in the range that I selected")),
+      tags$p("If you have selected a portfolio beta that is mathmatically impossible to achieve based on the 
+             securities you have entered the program will attempt to get at close as possible"),      
+      tags$li(h4("The amount to invest does not add up to exactly what I entered")),
+      tags$p("The program is designed to provide slight flexibility (+/- 1%) in order to speed up the calculations necessary")
+      
+  )
+    })
+      })
 
 observeEvent(input$faq2, {
   toggle('text_div2')

@@ -195,7 +195,7 @@ observeEvent(input$click, {
               fluidRow(
                 column(1, hr()),
                 column(11,
-                       actionButton("faq3", "A Little Math", 
+                       actionButton("faq3", "Standard Deviation", 
                                     style = 'width: 550px;
                                         background-color:#DBE6E0;
                                         border-color: #374885;
@@ -238,9 +238,15 @@ observeEvent(input$faq2, {
 
 observeEvent(input$faq3, {
   toggle('text_div3')
-  output$faq3text <- renderUI({p("This program computes the optimal portfolio by maximizing the the return to CvAR ratio. 
-                                 To learn more about the math behind this see", tags$a(href="https://www.hindawi.com/journals/isrn/2013/570950/",target="_blank", "this aplied mathmatics article published in Hindawi"),"." )})
+  output$faq3text <- renderUI({p("To illustrate standard deviation let's look at", tags$strong("your portfolio."), "It has an anual expected return of", paste(round(values()[1]*1200,0), "%", sep=""), 
+                                "and a standard deviation of", paste(round(values()[2]*346.4102,0), "%", sep=""), ". Most of the time",  
+                               tags$a(href="https://en.wikipedia.org/wiki/68%E2%80%9395%E2%80%9399.7_rule#:~:text=For%20an%20approximately%20normal%20data,deviations%20account%20for%20about%2099.7%25.", "(or more precisely, 68% of the time)"),
+                              "your portfolio's annual returns will range between", paste(round((values()[1]*1200-values()[2]*346.4102),0), "%", sep="")," and", paste(round((values()[1]*1200+values()[2]*346.4102),0), "%", sep=""),
+                             ". If we look at two standard deviations, 95% of the time your portfolio's returns will fall between",
+                            paste(round((values()[1]*1200-2*values()[2]*346.4102),0), "%", sep="")," and",  paste(round((values()[1]*1200+2*values()[2]*346.4102),0), "%", sep=""),"
+                          ")})
 })
+
 
 
 

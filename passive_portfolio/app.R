@@ -69,7 +69,7 @@ ui <- fluidPage(theme = "bootstrap.css",
                                      tags$li(h4("Choose amount to invest")), 
                                      tags$li(h4("Pick stocks, ETFs, or mutual funds to invest in")),
                                         tags$p("If you choose to invest in only stocks", tags$a(href="https://www.jstor.org/stable/2330969?seq=1#metadata_info_tab_contents",target="_blank", 
-                                              "reserch shows"), "approximately 20-30 individual stocks are necessary for proper diversification. 
+                                              "research shows"), "approximately 20-30 individual stocks are necessary for proper diversification. 
                                                If you are using a combination of ETFs/Mutual Funds and stocks fewer investments may be necessary. 
                                                 To learn more read", tags$a(href="https://www.thebalance.com/diversified-passive-investing-strategy-357878",target="_blank", 
                                                 "passive investing"), "or", tags$a(href="http://news.morningstar.com/classroom2/course.asp?docId=2938&page=4&CN=COM",target="_blank", "ways to diversify."),

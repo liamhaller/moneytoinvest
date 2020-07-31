@@ -173,7 +173,7 @@ observeEvent(input$click, {
       fluidRow(
             column(1, hr()),
             column(11,
-                   actionButton("faq1", "Portfolio Standard Deviation", 
+                   actionButton("faq1", "FAQ", 
                                 style = 'width: 550px;
                                         background-color:#DBE6E0;
                                         border-color: #374885;

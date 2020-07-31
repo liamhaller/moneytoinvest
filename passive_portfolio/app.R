@@ -86,14 +86,14 @@ ui <- fluidPage(theme = "bootstrap.css",
                                 div(style = 'overflow-x: scroll', tableOutput("weights")),
                                 tableOutput("description")%>% withSpinner(color="#805d8d"),
                                 uiOutput("reset"))),
-                    fluidRow(
-                      linebreaks(10),
-                      column(12, 
-                             actionButton("button", "Disclaimer", 
-                                          style="color: #000000; background-color: #DBE6E0; border-color: #DBE6E0"),
-                             hidden(
-                               div(id='text_div',
-                                   verbatimTextOutput("text")
+                   # fluidRow(
+                    #  linebreaks(10),
+                     # column(12, 
+                      #       actionButton("button", "Disclaimer", 
+                       #                   style="color: #000000; background-color: #DBE6E0; border-color: #DBE6E0"),
+                        #     hidden(
+                         #      div(id='text_div',
+                          #         verbatimTextOutput("text")
 
                   )
                 )
@@ -151,17 +151,17 @@ output$weights <- renderTable(data())
 output$description <- renderTable(desc())
     
 #disclaimer
-observeEvent(input$button, {
-  toggle('text_div')
-  output$text <- renderText({
-    "This website is distributed for general informational and educational purposes only 
-    and is not intended to constitute legal, tax, accounting or investment advice. The information, opinions and 
-    views contained herein have not been tailored to the investment objectives of any one individual, are current
-    only as of the date hereof and may be subject to change at any time without prior notice.All investment strategies 
-    and investments involve risk of loss.  Nothing contained in this website should be construed as investment advice. 
-    Any reference to an investment’s past or potential performance is not, and should not be construed as, a recommendation
-    or as a guarantee of any specific outcome or profit. "})
-})
+#observeEvent(input$button, {
+#  toggle('text_div')
+#  output$text <- renderText({
+#    "This website is distributed for general informational and educational purposes only 
+#    and is not intended to constitute legal, tax, accounting or investment advice. The information, opinions and 
+#    views contained herein have not been tailored to the investment objectives of any one individual, are current
+#    only as of the date hereof and may be subject to change at any time without prior notice.All investment strategies 
+#    and investments involve risk of loss.  Nothing contained in this website should be construed as investment advice. 
+#    Any reference to an investment’s past or potential performance is not, and should not be construed as, a recommendation
+#    or as a guarantee of any specific outcome or profit. "})
+#})
 
 observeEvent(input$click, {
   insertUI(

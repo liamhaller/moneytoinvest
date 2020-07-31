@@ -10,6 +10,7 @@ library(shinydashboard)
 library(shinyjs)
 library(htmltools)
 library(V8)
+library(ROI.plugin.quadprog)
 library(DEoptim)
 source("helper.R")
 

@@ -19,6 +19,7 @@ function(input, callback) {
   callback({value: item, label: item});
 }
 "
+options(shiny.sanitize.errors = FALSE)
 
 linebreaks <- function(n){HTML(strrep(br(), n))}
 

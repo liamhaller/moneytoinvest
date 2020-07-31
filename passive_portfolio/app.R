@@ -13,22 +13,6 @@ library(V8)
 library(DEoptim)
 source("helper.R")
 
-
-
-#TODO
-#enter valid ticker
-#faq accordian
-  #create FAQ
-  #somethign went wrong?
-  #more resources
-    #beta isn't in range
-    #don't add to dollar amount entered
-    #not all stocks are showing
-#error messages
-
-#write text  for site
-
-
 createOption <- "
 function(input, callback) {
   var item = input.toUpperCase();
@@ -223,19 +207,22 @@ observeEvent(input$faq1, {
   output$faq1text <- renderUI({
 
     tags$ol(
-      tags$li(h4("Why is my CVaR so high?")), 
+      tags$li(h5("Why is my CVaR so high?")), 
       tags$p("The program works best when you have included at least 10-15+ securities. 
              In addition if you have entered securities that are highly correlated the program 
              will not be as effective"),
-      tags$li(h4("My portfolio beta is not in the range that I selected")),
+      tags$li(h5("My portfolio beta is not in the range that I selected")),
       tags$p("If you have selected a portfolio beta that is mathmatically impossible to achieve based on the 
              securities you have entered the program will attempt to get at close as possible"),      
-      tags$li(h4("The amount to invest does not add up to exactly what I entered")),
-      tags$p("The program is designed to provide slight flexibility (+/- 1%) in order to speed up the calculations necessary")
+      tags$li(h5("The amount to invest does not add up to exactly what I entered")),
+      tags$p("The program is designed to provide slight flexibility (+/- 1%) in order to speed up the calculations necessary"),
+      tags$li(h5("I can't see all of the stocks that I entered")),
+      tags$p("Hover your mouse over teh stock output and you will be able to scroll to see all of the output")
       
   )
     })
       })
+
 
 observeEvent(input$faq2, {
   toggle('text_div2')

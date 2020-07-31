@@ -117,13 +117,21 @@ server <- function(input, output) {
 
 wait_time <- observeEvent(input$click, {
     showModal(modalDialog(
-        "calculating portfolio - this process may take up to 5 minutes.",
+        p("calculating portfolio - this process may take up to 5 minutes."),
         easyClose = TRUE,
         footer = modalButton("Dismiss")))})
 
-stocks <- eventReactive(input$click, {as.vector(input$stocks)})
+stocks <- eventReactive(input$click, {
+  validate(
+    need(input$stocks != "", "Error! Please refresh and select two or more tickers to try again")) 
+  as.vector(input$stocks)})
+  
 hist <-  eventReactive(input$click, {data_clean(stocks())})
-betas <- eventReactive(input$click, {get_capm(hist())})
+betas <- eventReactive(input$click, {
+  validate(
+    need(try(hist() == FALSE), "One or more of the tickers you have entered may be invalid. Please refresh and try again. Example (MSFT AAPL SPY GOOG)")
+  )
+  get_capm(hist())})
 opt_qu <- eventReactive(input$click, {create_portfolio(hist(), stocks(), betas(), input$factor[1], input$factor[2])})
 data <- eventReactive(input$click, {create_df(opt_qu()$weights,input$investment, stocks())})
 desc <- eventReactive(input$click, {print_desc(opt_qu()$objective_measures, betas(), opt_qu()$weights, hist())})

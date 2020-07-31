@@ -96,10 +96,10 @@ ui <- fluidPage(theme = "bootstrap.css",
                          #      div(id='text_div',
                           #         verbatimTextOutput("text")
 
-                  )
-                )
-              )
-            )
+ #                 )
+ #               )
+ #             )
+ #           )
           )
         )
       )

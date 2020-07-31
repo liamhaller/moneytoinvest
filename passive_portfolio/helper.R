@@ -131,8 +131,8 @@ print_desc <- function(objective_measures, betas, weights, hist){
   return(df2)
 }
 
-#meanorstdev <- function(opt_qu){
-#  values <- as.numeric(opt_qu$objective_measures)
-#  return(values)
-#}
+meanorstdev <- function(opt_qu){
+  values <- as.numeric(opt_qu$objective_measures)
+  return(values)
+}
 

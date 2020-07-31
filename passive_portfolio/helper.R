@@ -100,7 +100,7 @@ pspec <- add.constraint(portfolio=pspec, type="factor_exposure",
 qu <- add.objective(portfolio=pspec, type="return", name="mean")
 qu <- add.objective(portfolio=qu, type="risk", name="CVaR")
 opt_qu <- optimize.portfolio(R=hist, portfolio=qu, maxSTARR = TRUE,
-                             optimize_method="glpk", trace=TRUE)
+                             optimize_method="random", trace=TRUE)
 
 return(opt_qu)
 }

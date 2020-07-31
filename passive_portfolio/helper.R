@@ -123,7 +123,7 @@ print_desc <- function(objective_measures, betas, weights, hist){
   portfolio_beta <- sum(as.vector(weights)*betas)
   
   numbers <- c(paste(mean*100, "%", sep=""), paste(stdev*100, "%", sep=""), round(portfolio_beta,2), round(nrow(hist)/12,1))
-  letters <- c("Annual Expected Return", "Annual Standard Deviation", "Portfolio Beta", "Years of Data")
+  letters <- c("Annual Expected Return", "Annual CVaR", "Portfolio Beta", "Years of Data")
   
   #assemble data frame
   df2 <- data.frame(matrix(nrow = 1, data = numbers))

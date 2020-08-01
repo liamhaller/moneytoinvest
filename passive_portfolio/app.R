@@ -43,6 +43,8 @@ ui <- fluidPage(theme = "bootstrap.css",
                 tags$head(includeHTML(("google-analytics.html"))),
                 tags$head(includeHTML(("google-adsence.html"))),
                 tags$head(tags$link(rel="shortcut icon", href="favicon.png")),
+                (windowTitle = HTML("<title>Now What?</title>")),
+
                 
                 
              

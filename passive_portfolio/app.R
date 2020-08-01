@@ -228,9 +228,9 @@ observeEvent(input$faq1, {
       tags$p("If you have selected a portfolio beta that is mathmatically impossible to achieve based on the 
              securities you have entered the program will attempt to get at close as possible"),      
       tags$li(h5("The amount to invest does not add up to exactly what I entered")),
-      tags$p("The program is designed to provide slight flexibility (+/- 1%) in order to speed up the calculations necessary"),
+      tags$p("The program is designed to provide slight flexibility (+/- 1%) in order to speed up calculations"),
       tags$li(h5("I can't see all of the stocks that I entered")),
-      tags$p("Hover your mouse over teh stock output and you will be able to scroll to see all of the output")
+      tags$p("Scroll across the output to see all results")
       
   )
     })

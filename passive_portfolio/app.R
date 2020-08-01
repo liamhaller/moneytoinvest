@@ -213,7 +213,7 @@ observeEvent(input$click, {
       )
     )
   )
-})
+}, once = TRUE)
 
 observeEvent(input$faq1, {
   toggle('text_div1')

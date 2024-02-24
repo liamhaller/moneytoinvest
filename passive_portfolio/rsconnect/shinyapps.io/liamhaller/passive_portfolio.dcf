@@ -1,0 +1,10 @@
+name: passive_portfolio
+title:
+username: liamhaller
+account: liamhaller
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 11319097
+bundleId: 8293113
+url: https://liamhaller.shinyapps.io/passive_portfolio/
+version: 1

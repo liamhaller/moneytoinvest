@@ -40,8 +40,8 @@ ui <- fluidPage(theme = "bootstrap.css",
                            ".shiny-output-error:before { visibility: visible; content: 'An error occurred.
                            1. Make sure you have entered at least 5 tickers.
                            2. Make sure each of the tickers you have entered are valid '; }"),
-                tags$head(includeHTML(("google-analytics.html"))),
-                tags$head(includeHTML(("google-adsence.html"))),
+                #tags$head(includeHTML(("google-analytics.html"))),
+                #tags$head(includeHTML(("google-adsence.html"))),
                 tags$head(tags$link(rel="shortcut icon", href="favicon.png")),
                 (windowTitle = HTML("<title>Money to Invest</title>")),
 

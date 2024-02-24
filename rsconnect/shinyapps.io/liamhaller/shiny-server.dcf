@@ -1,0 +1,10 @@
+name: shiny-server
+title:
+username: liamhaller
+account: liamhaller
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 11319059
+bundleId: 8293107
+url: https://liamhaller.shinyapps.io/shiny-server/
+version: 1
